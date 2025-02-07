@@ -6,18 +6,18 @@
  */
 
 import React from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './src/screens/navigation/AppNavigator';
+import RootProvider from './src/context/RootProvider';
 
 function App(): React.JSX.Element {
 
   return (
-    // <GestureHandlerRootView style={{ flex: 1 }}>
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
-    // </GestureHandlerRootView>
+    <RootProvider>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </RootProvider>
 
   );
 }
